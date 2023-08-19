@@ -94,4 +94,8 @@ router.post('/', validateDogInfo, createDog);
 router.put('/:dogId', validateDogId, validateDogInfo, updateDog);
 router.delete('/:dogId', validateDogId, deleteDog);
 
+// Connect to dog-foods
+const foodsRouter = require('./dog-foods');
+router.use('/:dogId/foods', validateDogId, foodsRouter);
+
 module.exports = router;
