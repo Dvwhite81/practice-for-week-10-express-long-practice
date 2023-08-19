@@ -20,6 +20,10 @@ app.use((req, res, next) => {
   next();
 });
 
+// dogs.js
+const dogsRouter = require('./routes/dogs');
+app.use('/dogs', dogsRouter);
+
 // For testing purposes, GET /
 app.get('/', (req, res) => {
   res.json("Express server running. No content provided at root level. Please use another route.");
