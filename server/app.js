@@ -1,5 +1,13 @@
 const express = require('express');
+// Async errors
+require('express-async-errors');
+
 const app = express();
+
+// Serve all the files in the assets folder under the static resource
+app.use('/static', express.static('assets'));
+// For parsing application/json
+app.use(express.json());
 
 // For testing purposes, GET /
 app.get('/', (req, res) => {
